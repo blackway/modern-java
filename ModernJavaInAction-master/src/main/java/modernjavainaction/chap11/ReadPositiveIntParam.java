@@ -32,6 +32,8 @@ public class ReadPositiveIntParam {
 
   public static int readDurationImperative(Properties props, String name) {
     String value = props.getProperty(name);
+
+    // TODO: 구현 해야 할것.
     if (value != null) {
       try {
         int i = Integer.parseInt(value);
@@ -50,7 +52,9 @@ public class ReadPositiveIntParam {
   }
 
   public static Optional<Integer> s2i(String s) {
+
     try {
+      // FIXME: 조금더 많은 인스턴스 구현하기 
       return of(Integer.parseInt(s));
     } catch (NumberFormatException e) {
       return empty();

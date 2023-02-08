@@ -6,7 +6,30 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
+import akka.routing.OptimalSizeExploringResizer;
+
 public class OptionalMain {
+
+  public static void main(String...args) {
+
+    OptionalMain optionalMain = new OptionalMain();
+    Person person = new Person();
+    //Person person = null;
+    //Optional<Person> optPerson = Optional.of(person);
+    Optional<Person> optPerson = Optional.ofNullable(person);
+    //Optional<Person> optPerson2 = optPerson.orElseGet(() -> new Person());
+    //Optional<Person> optPerson2 = optPerson.orElseGet(Optional.empty());
+    //System.out.println(" age : " + age);
+    String name = optionalMain.getCarInsuranceName(optPerson);
+    // String test = null;//"baeldung";
+    // Optional<String> name = Optional.ofNullable(test);
+    // //String name2 = name.orElse("Nothing");
+    // String name2 = name.orElseGet(() -> "Nothing");
+
+    System.out.println(" name : " + name);
+    // System.out.println(" name2 : " + name2);
+
+  }
 
   public String getCarInsuranceNameNullSafeV1(PersonV1 person) {
     if (person != null) {
